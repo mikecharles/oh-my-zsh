@@ -202,10 +202,7 @@ build_prompt() {
   RETVAL=$?
   prompt_status
   prompt_virtualenv
-<<<<<<< HEAD
   prompt_conda_env
-=======
->>>>>>> 67d29cb351a8db09541cb4bd8df31d6086cd0173
   prompt_context
   prompt_dir
   prompt_git
