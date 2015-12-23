@@ -133,6 +133,8 @@ prompt_agnoster_main() {
   RETVAL=$?
   CURRENT_BG='NONE'
   prompt_status
+  prompt_virtualenv
+  prompt_conda_env
   prompt_context
   prompt_dir
   prompt_conda_env
