@@ -106,6 +106,14 @@ prompt_dir() {
   prompt_segment blue $PRIMARY_FG ' %~ '
 }
 
+# conda env: current working conda env
+prompt_conda_env() {
+  local conda_env_path="${CONDA_ENV_PATH##*/}"
+  if [[ -n $conda_env_path ]]; then
+    prompt_segment magenta white "$conda_env_path"
+  fi
+}
+
 # Status:
 # - was there an error
 # - am I root
@@ -125,6 +133,8 @@ prompt_agnoster_main() {
   RETVAL=$?
   CURRENT_BG='NONE'
   prompt_status
+  prompt_virtualenv
+  prompt_conda_env
   prompt_context
   prompt_dir
   prompt_git
