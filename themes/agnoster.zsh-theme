@@ -110,7 +110,7 @@ prompt_dir() {
 prompt_conda_env() {
   local conda_env_path="$(conda info -e | grep '*' | cut -d' ' -f1)"
   if [[ -n $conda_env_path && $conda_env_path != "root" ]]; then
-    prompt_segment magenta white " $conda_env_path"
+    prompt_segment magenta black " $conda_env_path "
   fi
 }
 
@@ -133,9 +133,9 @@ prompt_agnoster_main() {
   RETVAL=$?
   CURRENT_BG='NONE'
   prompt_status
-  prompt_conda_env
   prompt_context
   prompt_dir
+  prompt_conda_env
   prompt_git
   prompt_end
 }
