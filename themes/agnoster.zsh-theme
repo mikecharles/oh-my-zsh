@@ -108,7 +108,7 @@ prompt_dir() {
 
 # conda env: current working conda env
 prompt_conda_env() {
-  local conda_env_path="$(conda info -e | grep '*' | cut -d' ' -f1)"
+  local conda_env_path="$(conda info -e 2> /dev/null | grep '*' | cut -d' ' -f1)"
   if [[ -n $conda_env_path && $conda_env_path != "root" ]]; then
     prompt_segment magenta black " $conda_env_path "
   fi
